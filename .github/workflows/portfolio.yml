@@ -2,7 +2,7 @@ name: my-portfolio
 
 on:
     push:
-        branches: [dev]
+        branches: [main]
     workflow_dispatch:
 permissions:
     pages: write
@@ -25,7 +25,7 @@ jobs:
               uses: actions/configure-pages@v4
     #step3
             - name: code artifacts
-              uses: actions/upload-pages-artifacts@v4
+              uses: actions/upload-pages-artifact@v4
               with:
                 paths: "."
     #step4
