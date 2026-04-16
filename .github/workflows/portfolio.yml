@@ -27,7 +27,7 @@ jobs:
             - name: code artifacts
               uses: actions/upload-pages-artifact@v4
               with:
-                paths: "."
+                path: "."
     #step4
             - name: Deploye to Github pages
               uses: actions/deploy-pages@v4
