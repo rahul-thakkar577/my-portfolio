@@ -2,7 +2,7 @@ name: my-portfolio
 
 on:
     push:
-        branches: [main]
+        branches: [dev]
     workflow_dispatch:
 permissions:
     pages: write
