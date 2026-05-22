@@ -99,25 +99,29 @@ nav a:hover { color:var(--green); background:rgba(0,255,163,0.07); }
 .fill-pink { background:linear-gradient(90deg, var(--pink), rgba(255,60,172,0.4)); }
 
 /* PROJECTS */
-.projects-layout { display:grid; grid-template-columns:1.4fr 1fr; gap:1rem; }
-.proj-main { background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:2.5rem; position:relative; overflow:hidden; transition:border-color 0.3s; grid-row:span 2; }
-.proj-small { background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:1.8rem; position:relative; overflow:hidden; transition:border-color 0.3s, transform 0.2s; }
-.proj-small:hover { border-color:rgba(0,180,255,0.3); transform:translateX(3px); }
-.proj-main:hover { border-color:rgba(0,255,163,0.3); }
+.projects-layout { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+.proj-card { background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:2rem; position:relative; overflow:hidden; transition:border-color 0.3s, transform 0.2s; }
+.proj-card:hover { transform:translateY(-3px); }
+.proj-card.green:hover { border-color:rgba(0,255,163,0.3); }
+.proj-card.blue:hover { border-color:rgba(0,180,255,0.3); }
+.proj-card.pink:hover { border-color:rgba(255,60,172,0.3); }
+.proj-card.purple:hover { border-color:rgba(160,100,255,0.3); }
 .proj-glow { position:absolute; width:200px; height:200px; border-radius:50%; filter:blur(60px); pointer-events:none; opacity:0.1; top:-50px; right:-50px; }
-.glow-green { background:var(--green); } .glow-blue { background:var(--blue); } .glow-pink { background:var(--pink); }
+.glow-green { background:var(--green); } .glow-blue { background:var(--blue); } .glow-pink { background:var(--pink); } .glow-purple { background:#a064ff; }
 .proj-num { font-family:var(--font-display); font-weight:800; font-size:5rem; color:rgba(255,255,255,0.04); position:absolute; top:0.5rem; right:1rem; line-height:1; }
 .proj-badge { display:inline-flex; align-items:center; gap:0.4rem; font-size:0.6rem; letter-spacing:0.15em; text-transform:uppercase; padding:0.3rem 0.8rem; border-radius:100px; margin-bottom:1.2rem; }
 .badge-green { background:rgba(0,255,163,0.08); color:var(--green); border:1px solid rgba(0,255,163,0.2); }
 .badge-blue { background:rgba(0,180,255,0.08); color:var(--blue); border:1px solid rgba(0,180,255,0.2); }
-.proj-title { font-family:var(--font-display); font-weight:800; font-size:1.6rem; color:#fff; line-height:1.15; margin-bottom:1rem; }
-.proj-small .proj-title { font-size:1.1rem; margin-bottom:0.6rem; }
-.proj-desc { font-size:0.78rem; line-height:1.8; color:var(--dim); margin-bottom:1.2rem; }
-.proj-small .proj-desc { font-size:0.72rem; }
+.badge-pink { background:rgba(255,60,172,0.08); color:var(--pink); border:1px solid rgba(255,60,172,0.2); }
+.badge-purple { background:rgba(160,100,255,0.08); color:#a064ff; border:1px solid rgba(160,100,255,0.2); }
+.proj-title { font-family:var(--font-display); font-weight:800; font-size:1.3rem; color:#fff; line-height:1.15; margin-bottom:0.8rem; }
+.proj-desc { font-size:0.75rem; line-height:1.8; color:var(--dim); margin-bottom:1.2rem; }
 .proj-stack { display:flex; flex-wrap:wrap; gap:0.4rem; margin-bottom:1.5rem; }
 .ps-tag { font-size:0.58rem; padding:0.2rem 0.6rem; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.07); border-radius:4px; color:var(--dim); }
 .proj-link { display:inline-flex; align-items:center; gap:0.4rem; font-size:0.65rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--green); text-decoration:none; transition:gap 0.2s; }
 .proj-link.blue { color:var(--blue); }
+.proj-link.pink { color:var(--pink); }
+.proj-link.purple { color:#a064ff; }
 .proj-link:hover { gap:0.7rem; }
 .code-preview { background:rgba(3,7,15,0.6); border:1px solid rgba(0,255,163,0.1); border-radius:8px; padding:1rem 1.2rem; font-size:0.65rem; line-height:1.9; color:rgba(0,255,163,0.45); margin:1.2rem 0; white-space:pre; overflow:hidden; }
 
@@ -173,7 +177,6 @@ footer p { font-size:0.62rem; color:rgba(201,216,232,0.2); letter-spacing:0.08em
   .hero-right { align-items:center; }
   .section { padding:5rem 2rem; }
   .projects-layout { grid-template-columns:1fr; }
-  .proj-main { grid-row:span 1; }
   .edu-grid { grid-template-columns:1fr; }
   #contact { padding:5rem 2rem 3rem; }
   footer { padding:1.5rem 2rem; flex-direction:column; gap:0.5rem; text-align:center; }
@@ -205,10 +208,10 @@ footer p { font-size:0.62rem; color:rgba(201,216,232,0.2); letter-spacing:0.08em
       Rahul<br>
       <span class="line2">Thakkar</span>
     </h1>
-    <p class="hero-role">// Aspiring DevOps Engineer · CS Student · Open to Work</p>
+    <p class="hero-role">// Aspiring DevOps Engineer · MCA Student · Open to Work</p>
     <p class="hero-desc">
       I containerize things, automate what shouldn't be manual, and push commits daily.
-      <strong>Linux · Docker · Python · Git · AWS</strong> — learning by building, not just watching.
+      <strong>Linux · Docker · CI/CD · GitHub Actions · AWS</strong> — learning by building, not just watching.
     </p>
     <div class="hero-btns">
       <a href="#contact" class="btn-primary">Hire Me →</a>
@@ -230,12 +233,12 @@ footer p { font-size:0.62rem; color:rgba(201,216,232,0.2); letter-spacing:0.08em
         <span class="t-title">rahul@devops — bash</span>
       </div>
       <div class="t-body">
-        <div class="t-line"><span class="t-prompt">~$</span><span class="t-cmd"> docker ps</span></div>
-        <div class="t-out t-green">✓ smart-library    Up 3 hours</div>
-        <div class="t-out t-green">✓ ai-bank-app      Up 1 hour</div>
+        <div class="t-line"><span class="t-prompt">~$</span><span class="t-cmd"> docker compose up -d</span></div>
+        <div class="t-out t-green">✓ edu-portal        Up 2 hours</div>
+        <div class="t-out t-green">✓ ai-bank-app       Up 5 hours</div>
         <div class="t-sp"></div>
-        <div class="t-line"><span class="t-prompt">~$</span><span class="t-cmd"> echo "open to work"</span></div>
-        <div class="t-out t-pink">open to work 🚀</div>
+        <div class="t-line"><span class="t-prompt">~$</span><span class="t-cmd"> gh workflow run deploy.yml</span></div>
+        <div class="t-out t-pink">🚀 Pipeline triggered · open to work</div>
       </div>
     </div>
   </div>
@@ -270,7 +273,19 @@ footer p { font-size:0.62rem; color:rgba(201,216,232,0.2); letter-spacing:0.08em
       <div class="sp-header"><span class="sp-icon">🐳</span><span class="sp-level level-solid">Solid</span></div>
       <div class="sp-name">Docker</div>
       <div class="sp-tags"><span class="sp-tag">Containers</span><span class="sp-tag">Dockerfile</span><span class="sp-tag">Compose</span></div>
+      <div class="sp-bar"><div class="sp-fill fill-green" data-w="75"></div></div>
+    </div>
+    <div class="skill-pill reveal">
+      <div class="sp-header"><span class="sp-icon">⚙️</span><span class="sp-level level-solid">Solid</span></div>
+      <div class="sp-name">CI/CD</div>
+      <div class="sp-tags"><span class="sp-tag">Pipelines</span><span class="sp-tag">Automation</span><span class="sp-tag">Build & Deploy</span></div>
       <div class="sp-bar"><div class="sp-fill fill-green" data-w="70"></div></div>
+    </div>
+    <div class="skill-pill reveal">
+      <div class="sp-header"><span class="sp-icon">🔁</span><span class="sp-level level-solid">Solid</span></div>
+      <div class="sp-name">GitHub Actions</div>
+      <div class="sp-tags"><span class="sp-tag">Workflows</span><span class="sp-tag">YAML</span><span class="sp-tag">Secrets</span><span class="sp-tag">Runners</span></div>
+      <div class="sp-bar"><div class="sp-fill fill-green" data-w="68"></div></div>
     </div>
     <div class="skill-pill reveal">
       <div class="sp-header"><span class="sp-icon">🐍</span><span class="sp-level level-solid">Solid</span></div>
@@ -281,14 +296,14 @@ footer p { font-size:0.62rem; color:rgba(201,216,232,0.2); letter-spacing:0.08em
     <div class="skill-pill reveal">
       <div class="sp-header"><span class="sp-icon">☁️</span><span class="sp-level level-learning">Learning</span></div>
       <div class="sp-name">AWS Cloud</div>
-      <div class="sp-tags"><span class="sp-tag">EC2</span><span class="sp-tag">S3</span><span class="sp-tag">IAM</span><span class="sp-tag">Fundamentals</span></div>
-      <div class="sp-bar"><div class="sp-fill fill-blue" data-w="45"></div></div>
+      <div class="sp-tags"><span class="sp-tag">EC2</span><span class="sp-tag">S3</span><span class="sp-tag">IAM</span><span class="sp-tag">CloudWatch</span></div>
+      <div class="sp-bar"><div class="sp-fill fill-blue" data-w="50"></div></div>
     </div>
     <div class="skill-pill reveal">
-      <div class="sp-header"><span class="sp-icon">🔁</span><span class="sp-level level-wip">In Progress</span></div>
-      <div class="sp-name">CI/CD</div>
-      <div class="sp-tags"><span class="sp-tag">GitHub Actions</span><span class="sp-tag">Pipelines</span></div>
-      <div class="sp-bar"><div class="sp-fill fill-pink" data-w="20"></div></div>
+      <div class="sp-header"><span class="sp-icon">🛡️</span><span class="sp-level level-learning">Learning</span></div>
+      <div class="sp-name">DevSecOps</div>
+      <div class="sp-tags"><span class="sp-tag">Security Scanning</span><span class="sp-tag">SAST</span><span class="sp-tag">Shift Left</span></div>
+      <div class="sp-bar"><div class="sp-fill fill-blue" data-w="35"></div></div>
     </div>
   </div>
 </section>
@@ -300,38 +315,64 @@ footer p { font-size:0.62rem; color:rgba(201,216,232,0.2); letter-spacing:0.08em
     <h2 class="s-title">Projects</h2>
   </div>
   <div class="projects-layout">
-    <div class="proj-main reveal">
+
+    <!-- EduPortal -->
+    <div class="proj-card green reveal">
       <div class="proj-glow glow-green"></div>
       <div class="proj-num">01</div>
-      <div class="proj-badge badge-green">● College Project · DevOps</div>
-      <div class="proj-title">Smart Library Management System</div>
-      <p class="proj-desc">Built a complete library management system and containerized the entire app with Docker — runs on any machine instantly, zero config needed. CI/CD pipeline is the planned next phase.</p>
-      <div class="code-preview">$ docker build -t smart-library .
-✓ Successfully built image
-
-$ docker run -p 8080:8080 smart-library
-🚀 Server live on :8080
-📚 Library ready · Zero config</div>
+      <div class="proj-badge badge-green">● Multi-Container · DevOps</div>
+      <div class="proj-title">EduPortal — College Management System</div>
+      <p class="proj-desc">Containerized a full college portal (FastAPI + React + TinyLlama AI) using Docker Compose. Handled service networking, volume mounts, Nginx reverse proxy, and GitHub Actions CI/CD pipeline for automated deployments.</p>
+      <div class="code-preview">$ docker compose up -d
+✓ backend     healthy  :8000
+✓ frontend    healthy  :3000
+✓ ai-model    healthy  :11434
+✓ nginx       healthy  :80</div>
       <div class="proj-stack">
-        <span class="ps-tag">Docker</span><span class="ps-tag">Dockerfile</span><span class="ps-tag">Python</span><span class="ps-tag">GitHub</span><span class="ps-tag">CI/CD → Planned</span>
+        <span class="ps-tag">Docker Compose</span><span class="ps-tag">Nginx</span><span class="ps-tag">GitHub Actions</span><span class="ps-tag">CI/CD</span><span class="ps-tag">Linux</span>
       </div>
-      <a href="https://github.com/rahul-thakkar577/smart-library-app" target="_blank" class="proj-link">View on GitHub →</a>
+      <a href="https://github.com/rahul-thakkar577/Edu-portal" target="_blank" class="proj-link">View on GitHub →</a>
     </div>
-    <div class="proj-small reveal">
+
+    <!-- AI Bank App -->
+    <div class="proj-card blue reveal">
       <div class="proj-glow glow-blue"></div>
       <div class="proj-num">02</div>
-      <div class="proj-badge badge-blue">● AI · Web App</div>
-      <div class="proj-title">AI Bank App</div>
-      <p class="proj-desc">AI-powered banking application with smart transaction categorization and automated financial insights. Built to sharpen AI integration alongside DevOps skills.</p>
-      <div class="proj-stack"><span class="ps-tag">Python</span><span class="ps-tag">AI/ML</span><span class="ps-tag">Docker</span><span class="ps-tag">GitHub</span></div>
+      <div class="proj-badge badge-blue">● AWS · CI/CD · DevOps</div>
+      <div class="proj-title">AI Bank App — End-to-End DevOps</div>
+      <p class="proj-desc">Owned the full deployment pipeline for a Python AI banking app. Wrote Dockerfile, automated builds via GitHub Actions, provisioned AWS EC2, configured IAM, S3, security groups, VPC, and monitored with CloudWatch.</p>
+      <div class="proj-stack">
+        <span class="ps-tag">Docker</span><span class="ps-tag">GitHub Actions</span><span class="ps-tag">AWS EC2</span><span class="ps-tag">S3</span><span class="ps-tag">IAM</span><span class="ps-tag">CloudWatch</span>
+      </div>
       <a href="https://github.com/rahul-thakkar577/AI-BankApp-DevOps" target="_blank" class="proj-link blue">View on GitHub →</a>
     </div>
-    <div class="proj-small reveal" style="border-style:dashed;border-color:rgba(255,60,172,0.15);display:flex;align-items:center;justify-content:center;text-align:center;min-height:140px;">
-      <div>
-        <div style="font-family:var(--font-display);font-weight:800;font-size:1rem;color:rgba(255,255,255,0.12);margin-bottom:0.4rem;">NEXT PROJECT</div>
-        <div style="font-size:0.6rem;color:rgba(201,216,232,0.18);letter-spacing:0.15em;text-transform:uppercase;">CI/CD Pipeline · Coming Soon</div>
+
+    <!-- Expense Tracker App -->
+    <div class="proj-card pink reveal">
+      <div class="proj-glow glow-pink"></div>
+      <div class="proj-num">03</div>
+      <div class="proj-badge badge-pink">● Docker · Spring Boot</div>
+      <div class="proj-title">Expense Tracker App</div>
+      <p class="proj-desc">Dockerized a Spring Boot expense tracker app with multi-stage Dockerfile, set up GitHub Actions CI pipeline for automated image builds and container registry pushes, and configured health checks and logging.</p>
+      <div class="proj-stack">
+        <span class="ps-tag">Docker</span><span class="ps-tag">GitHub Actions</span><span class="ps-tag">Spring Boot</span><span class="ps-tag">CI Pipeline</span>
       </div>
+      <a href="https://github.com/rahul-thakkar577/Expense-tracker-app" target="_blank" class="proj-link pink">View on GitHub →</a>
     </div>
+
+    <!-- Smart Library -->
+    <div class="proj-card purple reveal">
+      <div class="proj-glow glow-purple"></div>
+      <div class="proj-num">04</div>
+      <div class="proj-badge badge-purple">● College Project · DevOps</div>
+      <div class="proj-title">Smart Library Management System</div>
+      <p class="proj-desc">Containerized a library management system with Docker. Runs on any machine instantly with zero config. Built as a DevOps practice target with structured deployment documentation.</p>
+      <div class="proj-stack">
+        <span class="ps-tag">Docker</span><span class="ps-tag">Python</span><span class="ps-tag">Shell Scripting</span><span class="ps-tag">Linux</span>
+      </div>
+      <a href="https://github.com/rahul-thakkar577" target="_blank" class="proj-link purple">View on GitHub →</a>
+    </div>
+
   </div>
 </section>
 
@@ -344,26 +385,26 @@ $ docker run -p 8080:8080 smart-library
   <div class="edu-grid">
     <div class="edu-card reveal">
       <div class="edu-icon icon-green">🎓</div>
-      <div class="edu-period">Current</div>
-      <div class="edu-title">Computer Science Student</div>
-      <div class="edu-sub">Bachelor's Degree · India</div>
+      <div class="edu-period">2024 – Present</div>
+      <div class="edu-title">Master of Computer Applications (MCA)</div>
+      <div class="edu-sub">Parul University · Vadodara, Gujarat</div>
       <div class="edu-items">
-        <div class="edu-item">Containerized a full app with Docker as a college project</div>
-        <div class="edu-item">Self-studying Linux, shell scripting & cloud-native tools</div>
-        <div class="edu-item">Building a public GitHub portfolio with real projects</div>
-        <div class="edu-item">Next: full CI/CD pipeline with GitHub Actions</div>
+        <div class="edu-item">Cloud Computing MOOC — Parul University (Dec 2025)</div>
+        <div class="edu-item">Deployed multi-container apps using Docker Compose + GitHub Actions</div>
+        <div class="edu-item">Self-studying DevSecOps and Kubernetes fundamentals</div>
+        <div class="edu-item">Building public GitHub portfolio with real DevOps projects</div>
       </div>
     </div>
     <div class="edu-card reveal">
-      <div class="edu-icon icon-blue">⚙️</div>
-      <div class="edu-period">Self-Learning</div>
-      <div class="edu-title">DevOps Practitioner</div>
-      <div class="edu-sub">Courses · Docs · Real Projects</div>
+      <div class="edu-icon icon-blue">🎓</div>
+      <div class="edu-period">2021 – 2024</div>
+      <div class="edu-title">Bachelor of Computer Applications (BCA)</div>
+      <div class="edu-sub">Kadi Sarva Vishwavidyalaya (KSV) · Gandhinagar, Gujarat</div>
       <div class="edu-items">
-        <div class="edu-item">Linux: filesystem, permissions, process management</div>
-        <div class="edu-item">Docker: Dockerfiles, containers, Docker Compose</div>
-        <div class="edu-item">Git: branching, PRs, commit hygiene</div>
-        <div class="edu-item">AWS Cloud: EC2, S3, IAM fundamentals</div>
+        <div class="edu-item">Linux, shell scripting & system administration foundations</div>
+        <div class="edu-item">Core CS: Networking, DBMS, OS, Software Engineering</div>
+        <div class="edu-item">Started containerization journey with Docker</div>
+        <div class="edu-item">Built Smart Library Management System as capstone project</div>
       </div>
     </div>
   </div>
